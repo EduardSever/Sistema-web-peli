@@ -10,5 +10,5 @@ public class AlmacenExcepcion extends RuntimeException {
 	public AlmacenExcepcion(String mensaje, Throwable exception) {
 		super(mensaje, exception);
 	}
-
+	
 }
