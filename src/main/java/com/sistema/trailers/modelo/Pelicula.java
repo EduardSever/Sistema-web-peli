@@ -25,7 +25,7 @@ public class Pelicula {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_palicula")
+	@Column(name = "id_pelicula")
 	private Integer id;
 
 	@NotBlank
@@ -44,11 +44,9 @@ public class Pelicula {
 
 	@NotEmpty
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "genero_pelicula", 
-	           joinColumns = @JoinColumn(name = "id_pelicula"), 
-	           inverseJoinColumns = @JoinColumn(name = "id_genero"))
+	@JoinTable(name = "genero_pelicula", joinColumns = @JoinColumn(name = "id_pelicula"), inverseJoinColumns = @JoinColumn(name = "id_genero"))
 	private List<Genero> generos;
-	
+
 	@Transient
 	private MultipartFile portada;
 
@@ -146,23 +144,5 @@ public class Pelicula {
 		this.generos = generos;
 		this.portada = portada;
 	}
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

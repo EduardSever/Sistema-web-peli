@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -46,7 +47,7 @@ form.ivalid-feedback {
 		<h2>Peliculas</h2>
 		<div class="text-end">
 			<a href="/admin/peliculas/nuevo" class="btn btn-primary mb-3">
-				Agregar película</a>
+				Agregar película </a>
 		</div>
 		<table class="table table-hover">
 			<thead>
@@ -58,19 +59,21 @@ form.ivalid-feedback {
 				</tr>
 			</thead>
 			<tbody>
-
 				<tr th:each="pelicula : ${peliculas}" th:object="${pelicula}">
 					<td></td>
 					<td>
+					
 						<div th:text="*{titulo}" class="fs-5 fw-bold"></div>
-						<p th:text="*{sinopsis}"></p>
+						
+						<p th:text="*{sipnosis}"></p>
+						
 						<div>
 							<span class="badge rounded-pill bg-light text-dark me-1"
 								th:each="genero: ${generos}" th:text="${genero.titulo}"> </span>
 						</div>
 					</td>
+					<td th:text="*{#temporals.format(fechaEstreno,'dd/MM/yyyy')}"> </td>
 					
-					<td th:text="*{#temporals.format(fechaEstreno,'dd/mm/yyyy')}"> </td>
 					<td> </td>
 				</tr>
 			</tbody>

@@ -42,7 +42,7 @@ public class AlmacenServicioImpl implements AlmacenServicio {
 	public String alamacenarArchivo(MultipartFile archivo) {
 		String nombreArchivo = archivo.getOriginalFilename();
 		if (archivo.isEmpty()) {
-			throw new AlmacenExcepcion("No se puede almacenar un arcivo vacio");
+			throw new AlmacenExcepcion("No se puede almacenar un archivo vacio");
 		}
 		try {
 			InputStream inputStream = archivo.getInputStream();
